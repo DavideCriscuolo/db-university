@@ -52,13 +52,21 @@ per ogni appello d'`Esame` a cui lo `Studente` ha partecipato, è necessario mem
 ### esami
 
 - id int Autoincrement PK Unique
+- nome_esame varchar(20) Not Null
 - corso_id Fk int not null
 
-### studenete
+### studeneti
 
-- id int Autoincrement PK Unique
+- matricola int Autoincrement Unique PK
+- id int Autoincrement Unique
 - nome varchar(20) Not Null
 - congome varchar(20) Not Null
+- email varchar(30) Not Null
+- phone int Not Null
+- anno_iscrizione year Not Null
+- importo_tasse money not null
+- isee money not null
+- borsa_di_studio money boolean not null
 - corso_di_laurea_id FK int not null
 
 ### studenete_esami_appelli
@@ -66,3 +74,5 @@ per ogni appello d'`Esame` a cui lo `Studente` ha partecipato, è necessario mem
 - id int Autoincrement PK Unique
 - stundente_id FK int not null
 - esami_id FK int not null
+- voto int not null
+- promosso boolean not null
