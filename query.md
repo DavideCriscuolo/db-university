@@ -72,6 +72,23 @@ WHERE `degrees`.`name`="Corso di Laurea in Economia" ;
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
+SELECT `students`.`id` AS `id_studente`,
+`students`.`surname`,
+`students`.`name`,
+`students`.`fiscal_code`,
+`students`.`registration_number`,
+`degrees`.`id` AS `id_degree`,
+`degrees`.`name` AS `name_degree`,
+`degrees`.`level`,
+`degrees`.`address`,
+`departments`.`id` AS `id_department`,
+`departments`.`name` AS `name_department`,
+`departments`.`address`
+FROM `students`
+JOIN `degrees` ON `students`.`degree_id`=`degrees`.`id`
+JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+ORDER BY `students`.`surname`, `students`.`name` ASC;
+
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
