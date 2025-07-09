@@ -2,7 +2,17 @@ Group by:
 
 1. Contare quanti iscritti ci sono stati ogni anno
 
+SELECT COUNT(\*) AS `iscritti_annui`,
+YEAR (`enrolment_date`) AS`anno`
+FROM `students`
+GROUP BY YEAR(`enrolment_date`);
+
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+   SELECT COUNT(\*) AS `stessio_ufficio` ,
+   `office_number` AS `numuero_uffcio`
+   FROM `teachers`
+   GROUP BY `office_number`;
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
