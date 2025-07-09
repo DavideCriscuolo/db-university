@@ -19,10 +19,13 @@ GROUP BY YEAR(`enrolment_date`);
 SELECT AVG(`vote`) AS `media_voti`, `exam_id` AS `id_esame`
 FROM `exam_student`
 GROUP BY `vote`,`exam_id`
-ORDER BY `vote` DESC
-;
+ORDER BY `vote` DESC;
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+SELECT COUNT(\*) AS `corsi_di_laurea`, `department_id` AS `dipartimento_id`
+FROM `degrees`
+GROUP BY `department_id`;
 
 Join:
 
