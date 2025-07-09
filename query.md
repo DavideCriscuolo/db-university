@@ -16,6 +16,12 @@ GROUP BY YEAR(`enrolment_date`);
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
+SELECT AVG(`vote`) AS `media_voti`, `exam_id` AS `id_esame`
+FROM `exam_student`
+GROUP BY `vote`,`exam_id`
+ORDER BY `vote` DESC
+;
+
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
 Join:
